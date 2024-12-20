@@ -1,0 +1,67 @@
+.node-container {
+    width: 2.5rem; /* Further reduced size of the node circle */
+    height: 2.5rem; /* Further reduced size of the node circle */
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .node-container.active-node {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .node-content {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .node-connection {
+    width: 8px;
+    height: 8px;
+    background-color: #ee0606;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .node-connection.active {
+    background-color: rgb(182, 10, 10);
+    transform: translate(-50%, -50%) scale(1.5);
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  }
+  
+  /* Centering nodes on the screen */
+  .p-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure minimum height for centering on screen */
+  }
+  
+  /* Additional style for spacing between nodes */
+  .grid-cols-1 > div {
+    width: 2.5rem; /* Updated size */
+    height: 2.5rem; /* Updated size */
+    border-radius: 50%;
+    background-color: #110606;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px; /* Thodi spacing neeche */
+  }
+  
+  .grid-cols-1 > div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
