@@ -1,5 +1,11 @@
 <template>
-  <KnowledgeMap />
+  <div id="app">
+    <video autoplay muted loop id="background-video">
+      <source src="@/assets/image/bgvid1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <KnowledgeMap />
+  </div>
 </template>
 
 <script>
@@ -14,17 +20,21 @@ export default {
 
 <style>
 #app {
-  background-image: url('@/assets/image/bg2.png'); /* Correct path */
-  background-size: cover; /* Ensure the background covers the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* No repeating background */
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Prevent scrolling */
-  margin: 0; /* Remove default body margin */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire background */
+  z-index: -1; /* Places the video behind other elements */
 }
 
 body {
